@@ -5,7 +5,7 @@ interface NewsArticleEntryProps {
     article: NewsArticle,
 }
 
-const NewsArticleEntry = ({article: {title, description, url, urlToImage} } : NewsArticleEntryProps) => {
+const NewsArticleEntry = ({ article: { title, description, url, urlToImage } }: NewsArticleEntryProps) => {
 
     const validImageUrl = (urlToImage?.startsWith("http://") || urlToImage?.startsWith("https://")) ? urlToImage : undefined;
 
@@ -17,11 +17,13 @@ const NewsArticleEntry = ({article: {title, description, url, urlToImage} } : Ne
                     src={validImageUrl}
                 />
 
+                <Card.Body>
+                    <Card.Title>{title}</Card.Title>
+                    <Card.Text>{description}</Card.Text>
+                </Card.Body>
+
             </Card>
-            <Card.Body>
-                <Card.Title>{title}</Card.Title>
-                <Card.Text>{description}</Card.Text>
-            </Card.Body>
+            
 
         </a>
 
